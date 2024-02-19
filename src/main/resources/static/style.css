@@ -1,0 +1,190 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+
+.navbar{
+background-color: #F5F7F8;
+padding: 16px !important;
+opacity: 0.8;
+}
+
+.navbar-nav > li > a{
+color: #F4CE14;
+}
+
+.navbar-nav > li > a:hover{
+color: #EE9322;
+}
+
+
+.navbar-brand{
+color: #EE9322!important;
+font-size: 24px !important;
+font-weight: bold;
+}
+
+.hero-area{
+padding : 16px;
+}
+
+#txt{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+}
+
+
+#item > img,h4,h5, button{
+padding: 4px;
+}
+
+
+
+#vocab{
+    display: none;
+}
+
+#vocabH{
+    display: none;
+}
+
+
+
+.popup{
+  width: 430px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 36px 16px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  padding: 0 10px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #F4CE14;
+  flex-direction: column;
+  gap: 16px;
+}
+.wrapper{
+  width: 430px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.wrapper h1{
+  font-size: 25px;
+  font-weight: 500;
+  padding: 20px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.wrapper .content{
+  margin: 25px 25px 35px;
+}
+.content .inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.inputs input{
+  height: 57px;
+  width: 56px;
+  margin: 4px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1ba98c;
+  text-align: center;
+  border-radius: 5px;
+  background: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  border: 1px solid #B5B5B5;
+}
+.typing-input {
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+  pointer-events: none;
+}
+.inputs input:first-child{
+  margin-left: 0px;
+}
+.content .details{
+  margin: 20px 0 25px;
+}
+.details p{
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.content .reset-btn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  padding: 15px 0;
+  font-size: 17px;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, rgba(244, 206, 20, 1) 0%, rgba(236, 143, 94, 1) 100%);
+  transition: 0.3s ease-in; 
+}
+
+.content .reset-btn:hover {
+  background-image: linear-gradient(to right, rgba(236, 143, 94, 1) 0%, rgba(244, 206, 20, 1) 100%);
+}
+
+
+
+#btnx{
+  width: 85%;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  padding: 15px 0;
+  font-size: 17px;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, rgba(244, 206, 20, 1) 0%, rgba(236, 143, 94, 1) 100%);
+  transition: 0.3s ease-in;
+}
+
+#btnx:hover{
+    background-image: linear-gradient(to right, rgba(236, 143, 94, 1) 0%, rgba(244, 206, 20, 1) 100%);
+}
+
+@media screen and (max-width: 460px) {
+  .wrapper {
+    width: 100%;
+  }
+  .wrapper h1{
+    font-size: 22px;
+    padding: 16px 20px;
+  }
+  .wrapper .content{
+    margin: 25px 20px 35px;
+  }
+  .inputs input{
+    height: 51px;
+    width: 50px;
+    margin: 3px;
+    font-size: 22px;
+  }
+  .details p{
+    font-size: 17px;
+  }
+  .content .reset-btn{
+    padding: 14px 0;
+    font-size: 16px;
+  }
+}

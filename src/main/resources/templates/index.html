@@ -1,0 +1,84 @@
+  <!DOCTYPE html>
+
+  <html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <title>Guess a Word Game JavaScript</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" th:href="@{/style.css}" type="text/css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+
+
+
+  <div class="col-md-12">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}" >VocabVortex</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/user}">Play Game</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                Level
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Easy</a></li>
+                <li><a class="dropdown-item" href="#">Medium</a></li>
+                <li><a class="dropdown-item" href="#">Hard</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="ml-auto">
+            <a th:href="@{/users/logout1}">
+              <button type="button" class="btn btn-warning position-relative">
+                Logout
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="popup" style="display: none;"></div>
+
+  <div class="wrapper">
+    <p class="user-score">Your Score: <span th:text="${score}" id="sc"></span></p>
+    <span th:text="${word}" id = "vocab"></span>
+    <span th:text="${hint}" id = "vocabH"></span>
+    <span th:text="${id}" id = "userId" style="display:none;"></span>
+    <h1>Guess the Word</h1>
+    <div class="content">
+      <input type="text" class="typing-input" maxlength="1">
+      <div class="inputs"></div>
+      <div class="details">
+        <p class="hint">Hint: <span ></span></p>
+        <p class="level">Level: <span th:text="${level}"></span></p>
+        <p class="guess-left">Remaining guesses: <span></span></p>
+        <p class="wrong-letter">Wrong letters: <span></span></p>
+      </div>
+      <button class="reset-btn">Reset Game</button>
+    </div>
+  </div>
+
+
+
+  <!-- Include your script.js -->
+  <script th:src="@{/js/script.js}" defer="defer"></script>
+
+  </body>
+  </html>

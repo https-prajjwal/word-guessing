@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+        <html lang="en" xmlns:th="http://www.thymeleaf.org">
+        <head>
+        <base th:href="@{/words/}" target="_top">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link th:href="@{/style2.css}" rel="stylesheet" type="text/css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div class="col-md-12">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" >VocabVortex</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/user}">Play Game</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" th:href="@{/words/addWord}">Add Words</a>
+                    </li>
+                </ul>
+                <div class="ml-auto">
+                    <a th:href="@{/logout}">
+                        <button type="button" class="btn btn-warning position-relative">
+                            Logout
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first" id = "top">
+            <p id = "title" style="margin: 24px 16px;"> Words in the Vortex</p>
+        </div>
+        <div id="tbl">
+            <table class=" table-bordered" style="text-align: center; border-color: #F4CE14;">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Word</th>
+                    <th>Hint</th>
+                    <th>Level</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="word : ${words}">
+                        <td th:text="${word.id}"></td>
+                        <td th:text="${word.name}"></td>
+                        <td th:text="${word.hint}"></td>
+                        <td th:text="${word.level}"></td>
+                        <td> <a th:href="@{/words/edit/{id}(id=${word.id})}"><button class="btn btn-primary btn-sm">Edit</button></a> </td>
+                        <td> <a th:href="@{/words/delete/{id}(id=${word.id})}"><button class="btn btn-danger btn-sm">Delete</button></a> </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
+
+

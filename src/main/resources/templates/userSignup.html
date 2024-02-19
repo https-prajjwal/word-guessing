@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <base th:href="@{/users/}" target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link th:href="@{/style2.css}" rel="stylesheet" type="text/css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div class="col-md-12">
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" th:href="@{/}" >VocabVortex</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/user}">Play Game</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+              Level
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Easy</a></li>
+              <li><a class="dropdown-item" href="#">Medium</a></li>
+              <li><a class="dropdown-item" href="#">Hard</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="ml-auto">
+          <a th:href="@{/login}">
+            <button type="button" class="btn btn-warning position-relative">
+              Admin Login
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <div class="fadeIn first" id = "top">
+      <p id = "title" style="margin: 24px 16px;"> VocabVortex</p>
+    </div>
+    <div th:if="${successMessage}" class="alert " role="alert">
+      <p th:text="${successMessage}"></p>
+    </div>
+    <!-- Login Form -->
+    <form th:action="@{/users/save}" method="post">
+
+      <input type="text" id="name" class="fadeIn second" name="name" placeholder="Name"/>
+      <br>
+      <input type="text" id="email" class="fadeIn third" name="email" placeholder="Email"/>
+      <br>
+      <input type="password" id="password" class="fadeIn fourth" name="password" placeholder="Password"/>
+      <br>
+      <input type="password" id="c_password" class="fadeIn fourth"  name="c_password" placeholder="Confirm Password"/>
+      <br>
+      <input type="submit" class="fadeIn fifth2" id = "cd" value="Register"/>
+    </form>
+    <div id="formFooter">
+      Already have an account? <a class="underlineHover" th:href="@{/user}" style="font-weight: bold; color: #F4CE14 !important;">Login</a>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
